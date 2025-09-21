@@ -1,103 +1,221 @@
-import Image from "next/image";
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showContent, setShowContent] = useState(false);
+  const [currentMenu, setCurrentMenu] = useState('main'); // 'main', 'tim-hieu', 'co-so-ly-luan'
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const backgroundImages = [
+    '/background-img/bg1.jpg',
+    '/background-img/bg2.jpg',
+    '/background-img/bg3.jpg',
+    '/background-img/bg4.jpg',
+    '/background-img/bg5.jpg'
+  ];
+
+  // Slideshow background images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % backgroundImages.length
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+
+  // Fade in content after 1 second
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleMenuChange = (newMenu: string) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    
+    setTimeout(() => {
+      setCurrentMenu(newMenu);
+      setIsTransitioning(false);
+    }, 300);
+  };
+
+  const getTitle = () => {
+    switch(currentMenu) {
+      case 'tim-hieu':
+        return 'Tìm hiểu';
+      case 'co-so-ly-luan':
+        return 'Cơ sở lý luận';
+      default:
+        return (
+          <>
+            <span className="text-red-600">Cơ sở hình thành</span>
+            <br />
+            <span className="text-yellow-400">tư tưởng Hồ Chí Minh</span>
+          </>
+        );
+    }
+  };
+
+  const getButtons = () => {
+    switch(currentMenu) {
+      case 'tim-hieu':
+        return [
+          {
+            href: '/journey/co-so-thuc-tien',
+            text: 'Cơ sở thực tiễn',
+            color: 'bg-red-600 hover:bg-red-700',
+            borderColor: 'border-yellow-400'
+          },
+          {
+            onClick: () => handleMenuChange('co-so-ly-luan'),
+            text: 'Cơ sở lý luận',
+            color: 'bg-yellow-500 hover:bg-yellow-600 text-red-800',
+            borderColor: 'border-red-600'
+          },
+          {
+            href: '/journey/nhan-to-chu-quan',
+            text: 'Nhân tố chủ quan HCM',
+            color: 'bg-red-600 hover:bg-red-700',
+            borderColor: 'border-yellow-400'
+          }
+        ];
+      
+      case 'co-so-ly-luan':
+        return [
+          {
+            href: '/journey/gia-tri-truyen-thong',
+            text: 'Giá trị truyền thống',
+            color: 'bg-red-600 hover:bg-red-700',
+            borderColor: 'border-yellow-400'
+          },
+          {
+            href: '/journey/tinh-hoa-van-hoa-nhan-loai',
+            text: 'Tinh hoa văn hóa nhân loại',
+            color: 'bg-yellow-500 hover:bg-yellow-600 text-red-800',
+            borderColor: 'border-red-600'
+          },
+          {
+            href: '/journey/chu-nghia-mac-lenin',
+            text: 'Chủ nghĩa Mác-Lênin',
+            color: 'bg-red-600 hover:bg-red-700',
+            borderColor: 'border-yellow-400'
+          }
+        ];
+      
+      default:
+        return [
+          {
+            onClick: () => handleMenuChange('tim-hieu'),
+            text: 'Tìm hiểu',
+            color: 'bg-red-600 hover:bg-red-700',
+            borderColor: 'border-yellow-400'
+          },
+          {
+            href: '/chatbot',
+            text: 'Chatbot',
+            color: 'bg-yellow-500 hover:bg-yellow-600 text-red-800',
+            borderColor: 'border-red-600'
+          },
+          {
+            href: '/quiz',
+            text: 'Quiz',
+            color: 'bg-red-600 hover:bg-red-700',
+            borderColor: 'border-yellow-400'
+          }
+        ];
+    }
+  };
+
+  return (
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Background Slideshow */}
+      <div className="absolute inset-0 z-0">
+        {backgroundImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+        ))}
+        {/* Overlay để làm mờ background */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Back button for sub-menus */}
+      {currentMenu !== 'main' && (
+        <div className="absolute top-4 left-4 z-50">
+          <button 
+            onClick={() => handleMenuChange(currentMenu === 'co-so-ly-luan' ? 'tim-hieu' : 'main')}
+            className="bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2 backdrop-blur-sm"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <span>←</span>
+            <span>Quay lại</span>
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      )}
+
+      {/* Main Content */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
+        <div 
+          className={`text-center transition-all duration-500 ${
+            showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          } ${isTransitioning ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          {/* Background Box với độ mờ */}
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-3xl -m-8 md:-m-12" />
+          
+          {/* Content */}
+          <div className="relative z-10">
+            {/* Title */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-12 leading-tight transition-all duration-500">
+              {getTitle()}
+            </h1>
+
+            {/* Navigation Buttons */}
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              {getButtons().map((button, index) => (
+                <div key={index}>
+                  {button.href ? (
+                    <Link href={button.href}>
+                      <button className={`group relative ${button.color} text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-xl min-w-[200px]`}>
+                        <div className="flex items-center justify-center gap-3">
+                          <span>{button.text}</span>
+                        </div>
+                        <div className={`absolute inset-0 rounded-lg border-2 ${button.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                      </button>
+                    </Link>
+                  ) : (
+                    <button 
+                      onClick={button.onClick}
+                      className={`group relative ${button.color} text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-xl min-w-[200px]`}
+                    >
+                      <div className="flex items-center justify-center gap-3">
+                        <span>{button.text}</span>
+                      </div>
+                      <div className={`absolute inset-0 rounded-lg border-2 ${button.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
