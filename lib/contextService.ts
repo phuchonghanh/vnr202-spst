@@ -79,7 +79,7 @@ export class ContextService {
 
     contextString += `\nHướng dẫn trả lời:
 - Ưu tiên sử dụng thông tin từ tài liệu trên để trả lời câu hỏi
-- Nếu câu hỏi không liên quan đến tài liệu, hãy nói rằng tài liệu không có, nhưng tôi vẫn sẽ reasearch để trả lời
+- Nếu câu hỏi không liên quan đến tài liệu, hãy nói rằng tài liệu không có, nhưng tôi vẫn sẽ research để trả lời
 - Luôn trả lời bằng tiếng Việt`;
 
     return contextString;
