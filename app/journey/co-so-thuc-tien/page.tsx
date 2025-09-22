@@ -55,7 +55,7 @@ export default function CoSoThucTien() {
       id: 8,
       title: "Khủng hoảng về đường lối cứu nước",
       content: "Các phong trào yêu nước theo khuynh hướng dân chủ tư sản đều thất bại do giai cấp tư sản Việt Nam còn non yếu và chưa có đường lối, phương pháp cách mạng đúng đắn. Xuất hiện câu hỏi: Cứu nước bằng con đường nào để có thể đi đến thắng lợi?",
-      images: ["/context/images/crisis.pngks"]
+      images: ["/context/images/crisis.png"]
     },
     {
       id: 9,
