@@ -51,7 +51,7 @@ export class QuizService {
       const trimmedLine = line.trim();
       
       // Phát hiện câu hỏi mới
-      if (trimmedLine.match(/^Câu \d+\./)) {
+      if (trimmedLine.match(/^Câu \d+[\.\s]/)) {
         // Lưu câu hỏi trước đó nếu có
         if (currentQuestion.question && currentQuestion.options && currentQuestion.correctAnswer) {
           questions.push(currentQuestion as QuizQuestion);
@@ -61,24 +61,31 @@ export class QuizService {
         questionCounter++;
         currentQuestion = {
           id: questionCounter,
-          question: trimmedLine.replace(/^Câu \d+\./, '').trim(),
+          question: trimmedLine.replace(/^Câu \d+[\.\s]/, '').trim(),
           options: { A: '', B: '', C: '', D: '' }
         };
       }
-      // Phát hiện các đáp án A, B, C, D
-      else if (trimmedLine.match(/^\s*[ABCD]\./)) {
-        const option = trimmedLine.charAt(trimmedLine.indexOf('. ') - 1) as 'A' | 'B' | 'C' | 'D';
-        const optionText = trimmedLine.substring(trimmedLine.indexOf('. ') + 2).trim();
-        
-        if (currentQuestion.options) {
+      // Phát hiện các đáp án A, B, C, D (hỗ trợ cả viết hoa và viết thường)
+      else if (trimmedLine.match(/^\s*[ABCDabcd][\.\s]/)) {
+        const optionMatch = trimmedLine.match(/^\s*([ABCDabcd])[\.\s](.+)$/);
+        if (optionMatch && currentQuestion.options) {
+          const option = optionMatch[1].toUpperCase() as 'A' | 'B' | 'C' | 'D';
+          let optionText = optionMatch[2].trim();
+          
+          // Kiểm tra nếu có ✅ trong đáp án
+          if (optionText.includes('✅')) {
+            optionText = optionText.replace('✅', '').trim();
+            currentQuestion.correctAnswer = option;
+          }
+          
           currentQuestion.options[option] = optionText;
         }
       }
-      // Phát hiện đáp án đúng
+      // Phát hiện đáp án đúng theo format "👉 Đáp án đúng [chữ cái]"
       else if (trimmedLine.includes('👉 Đáp án đúng')) {
-        const correctMatch = trimmedLine.match(/đúng\s+([ABCD])/);
+        const correctMatch = trimmedLine.match(/đúng\s+([ABCDabcd])/i);
         if (correctMatch) {
-          currentQuestion.correctAnswer = correctMatch[1] as 'A' | 'B' | 'C' | 'D';
+          currentQuestion.correctAnswer = correctMatch[1].toUpperCase() as 'A' | 'B' | 'C' | 'D';
         }
       }
     }

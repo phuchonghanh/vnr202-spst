@@ -37,7 +37,7 @@ export default function TinhHoaVanHoaNhanLoai() {
       id: 5,
       title: "Học hỏi từ Lão giáo",
       content: "Đối với Lão giáo, Hồ Chí Minh kế thừa tư tưởng của Lão Tử về việc sống gắn bó với thiên nhiên, hoà đồng với thiên nhiên, bảo vệ môi trường sống. Người kêu gọi nhân dân trồng cây, tổ chức 'Tết trồng cây'. Hồ Chí Minh cũng kế thừa tư tưởng thoát mọi ràng buộc của vòng danh lợi, khuyên cán bộ thực hiện cần kiệm liêm chính, chí công vô tư.",
-      images: ["/context/images/lao-giao.jpg", "/context/images/lao-tu.jpg"]
+      images: ["/context/images/lao-giao.jfif", "/context/images/lao-tu.jpg"]
     },
     {
       id: 6,
