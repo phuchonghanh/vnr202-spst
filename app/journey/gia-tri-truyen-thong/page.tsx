@@ -11,64 +11,74 @@ export default function GiaTriTruyenThong() {
   const slidesData = [
     {
       id: 1,
-      title: "Giá trị truyền thống tốt đẹp của dân tộc Việt Nam",
-      content: "Giá trị truyền thống tốt đẹp của dân tộc Việt Nam là một trong những cơ sở lý luận quan trọng hình thành tư tưởng Hồ Chí Minh. Các giá trị này đã được Người kế thừa, phát triển sáng tạo để phục vụ cho cuộc cách mạng giải phóng dân tộc và xây dựng đất nước.",
-      images: ["/context/images/gia-tri-truyen-thong.jpg"]
+      title: 'II. Đảng lãnh đạo đấu tranh giành chính quyền (1930–1945)',
+      content:
+        'Từ sau khi Đảng ra đời, phong trào cách mạng bùng nổ mạnh mẽ, trải qua các cao trào 1930–1931, khôi phục 1932–1935 và phong trào Dân chủ 1936–1939 — tạo tiền đề quyết định cho Cách mạng Tháng Tám 1945.',
+      images: ['https://vietjack.com/giai-bai-tap-lich-su-12/images/ly-thuyet-phong-trao-cach-mang-1930-1935-1.PNG']
     },
     {
       id: 2,
-      title: "Chủ nghĩa yêu nước - Giá trị xuyên suốt",
-      content: "Chủ nghĩa yêu nước là giá trị xuyên suốt trong những truyền thống tốt đẹp của dân tộc Việt Nam. Đó là động lực, sức mạnh giúp cho dân tộc Việt Nam tồn tại vượt qua mọi khó khăn trong dựng nước và giữ nước mà phát triển. Chính chủ nghĩa yêu nước là nền tảng tư tưởng, điểm xuất phát và động lực thúc đẩy Hồ Chí Minh ra đi tìm đường cứu nước.",
-      images: ["/context/images/yeu-nuoc.jpg", "/context/images/ho-chi-minh-patriot.jpg"]
+      title: '1930–1931: Cao trào cách mạng bùng nổ',
+      content:
+        'Đảng (lúc đầu mang tên ĐCSVN, sau là ĐCS Đông Dương) lãnh đạo nhân dân đứng lên đấu tranh kịch liệt chống thực dân Pháp và phong kiến tay sai trên phạm vi cả nước., tiêu biểu là phong trào Xô viết Nghệ - Tĩnh',
+      images: ['https://vietjack.com/giai-bai-tap-lich-su-12/images/ly-thuyet-phong-trao-cach-mang-1930-1935-1.PNG']
     },
     {
       id: 3,
-      title: "Tinh thần đấu tranh anh dũng, bất khuất",
-      content: "Hồ Chí Minh đã chú ý kế thừa, phát triển tinh thần đấu tranh anh dũng, bất khuất vì độc lập, tự do của Tổ quốc, nhằm bảo vệ chủ quyền quốc gia và sự toàn vẹn lãnh thổ của chủ nghĩa yêu nước Việt Nam. Trong Tuyên ngôn Độc lập, Hồ Chí Minh đã trịnh trọng tuyên bố: 'Nước Việt Nam có quyền hưởng tự do và độc lập'.",
-      images: ["/context/images/tuyen-ngon-doc-lap.jpg", "/context/images/anh-dung-bat-khuot.jpg"]
+      title: 'Đỉnh cao: Xô viết Nghệ Tĩnh',
+      content:
+        'Phong trào đạt đỉnh ở Nghệ An, Hà Tĩnh. Chính quyền Xô viết hình thành dưới dạng các ủy ban tự quản ở nông thôn — biểu hiện tập dượt cho chính quyền cách mạng sau này.',
+      images: ['https://vietjack.com/giai-bai-tap-lich-su-12/images/ly-thuyet-phong-trao-cach-mang-1930-1935-1.PNG']
     },
     {
       id: 4,
-      title: "Không có gì quý hơn độc lập tự do",
-      content: "'Không có gì quý hơn độc lập tự do' - chân lý lớn của thời đại được Hồ Chí Minh khẳng định, đồng thời cũng chính là một điểm cốt lõi trong tư tưởng Hồ Chí Minh. Đây là kết quả của việc kế thừa và phát triển tinh thần yêu nước của dân tộc Việt Nam.",
-      images: ["/context/images/doc-lap-tu-do.jpg"]
+      title: 'Luận cương Chính trị (10–1930)',
+      content:
+        'Xác định tính chất cách mạng: tư sản dân quyền (thổ địa và phản đế). Nhấn mạnh vấn đề thổ địa là cái cốt; hạn chế: nặng đấu tranh giai cấp, chưa đặt giải phóng dân tộc lên hàng đầu như Cương lĩnh đầu tiên.',
+      images: ['https://nghiavuquansu.vn/wp-content/uploads/2024/12/tom-tat-luan-cuong-chinh-tri-thang-10.jpg']
     },
     {
       id: 5,
-      title: "Yêu nước gắn liền với yêu dân",
-      content: "Trong lãnh đạo nhân dân Việt Nam xây dựng và bảo vệ đất nước, Hồ Chí Minh hết sức chú trọng kế thừa, phát triển những giá trị truyền thống tốt đẹp của dân tộc Việt Nam: yêu nước gắn liền với yêu dân, có tinh thần đoàn kết, dân chủ, nhân ái, khoan dung trong cộng đồng và hòa hiếu với các dân tộc lân bang.",
-      images: ["/context/images/yeu-nuoc-yeu-dan.jpg", "/context/images/doan-ket.jpg"]
+      title: '1931: Tổn thất nặng – 11/4/1931: QTCS công nhận',
+      content:
+        'Tháng 4–1931, nhiều cán bộ chủ chốt bị bắt, hệ thống tổ chức bị tổn thất.Tại phiên họp thứ 25 của hội nghị toàn thể lần thứ 11 Ban Chấp hành Quốc tế Cộng sản, ngày 11/4/1931, Quốc tế Cộng sản công nhận ĐCS Đông Dương là chi bộ độc lập — chỗ dựa quốc tế quan trọng.(Ảnh: Nguyễn Ái Quốc (hàng đầu, thứ nhất từ trái qua) chụp ảnh chung cùng với một số đại biểu dự Đại hội Quốc tế Cộng sản lần thứ 5)',
+      images: ['https://scontent.fsgn2-3.fna.fbcdn.net/v/t39.30808-6/490346476_1076021561232917_5612550192512286017_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aOfCri5t97YQ7kNvwG3-h9w&_nc_oc=AdmwSAriEIvBls0TeX7WS-SDaulqY3cXarhoQDrALCmaJOql4gNUQRl8KFkXWRiPQdU&_nc_zt=23&_nc_ht=scontent.fsgn2-3.fna&_nc_gid=C5ZWkzDR2L9HYalD86WZNw&oh=00_AfjbEXaFPwbC3ZoXYRf_hhtTBD6e2CsKU0HsURZJ4f04bg&oe=691A3029']
     },
     {
       id: 6,
-      title: "Con người là vốn quý nhất",
-      content: "Trong tư tưởng Hồ Chí Minh, con người là vốn quý nhất, là nhân tố quyết định thành công của cách mạng; dân là gốc của nước; nước lấy dân làm gốc; gốc có vững cây mới bền; xây lầu thắng lợi trên nền nhân dân. Đây là sự kế thừa và phát triển tinh thần cần cù, dũng cảm, sáng tạo, lạc quan, vì nghĩa, thương người của dân tộc Việt Nam.",
-      images: ["/context/images/con-nguoi-von-quy.jpg", "/context/images/dan-la-goc.jpg"]
+      title: '1932–1935: Khôi phục phong trào – Đại hội I',
+      content:
+        'Đảng khôi phục hệ thống tổ chức, củng cố lực lượng. Đại hội I (3–1935) đánh dấu sự phục hồi về tổ chức, đường lối, kiện toàn lãnh đạo.',
+      images: ['https://vnanet.vn/Data/Articles/2021/01/16/5238063/vna_potal_dai_hoi_lan_thu_nhat_cua_dang_khoi_phuc_to_chuc_thong_nhat_cac_phong_trao_dau_tranh_cach_mang_duoi_su_lanh_dao_cua_dang_145518042_stand.jpg','https://vnanet.vn/Data/Articles/2021/01/16/5238069/vna_potal_dai_hoi_lan_thu_nhat_cua_dang_khoi_phuc_to_chuc_thong_nhat_cac_phong_trao_dau_tranh_cach_mang_duoi_su_lanh_dao_cua_dang_145540734_stand.jpg']
     },
     {
       id: 7,
-      title: "Đoàn kết dân tộc và quốc tế",
-      content: "Đoàn kết dân tộc gắn liền với đoàn kết quốc tế là một nguyên tắc chiến lược quyết định thắng lợi của cách mạng Việt Nam. Đây là sự phát triển sáng tạo từ truyền thống đoàn kết của dân tộc Việt Nam, mở rộng ra phạm vi quốc tế.",
-      images: ["/context/images/doan-ket-dan-toc.jpg", "/context/images/doan-ket-quoc-te.jpg"]
+      title: 'Bối cảnh 1936–1939',
+      content:
+        'Đại hội VII Quốc tế Cộng sản (7-1935) xác định kẻ thù nguy hiểm là chủ nghĩa phát xít. Chính phủ Mặt trận Nhân dân Pháp lên nắm quyền (1936) tạo điều kiện thuận lợi cho cuộc đấu tranh đòi quyền dân chủ ở thuộc địa',
+      images: ['https://file3.qdnd.vn/data/images/0/2021/06/05/viethungvn/7.jpg?dpi=150&quality=100&w=1420&h=1080']
     },
     {
       id: 8,
-      title: "Tự hào về lịch sử và văn hóa dân tộc",
-      content: "Trong truyền thống dân tộc Việt Nam thường trực một niềm tự hào về lịch sử, trân trọng nền văn hóa, ngôn ngữ, phong tục tập quán và những giá trị tốt đẹp khác của dân tộc. Đó chính là một cơ sở hình thành nên tư tưởng, phẩm chất của nhà văn hóa kiệt xuất Hồ Chí Minh.",
-      images: ["/context/images/tu-hao-lich-su.jpg", "/context/images/van-hoa-dan-toc.jpg"]
+      title: 'Chủ trương phong trào Dân chủ 1936–1939',
+      content:
+        'Nhiệm vụ: chống phát xít, chống chiến tranh đế quốc, chống phản động thuộc địa; đòi tự do, dân chủ, cơm áo và hòa bình. Trọng tâm từng bước chuyển sang nhiệm vụ phản đế khi cần thiết. (một số báo trong thời kì Mặt trận dân chủ 1936 – 1939)',
+      images: ['http://cadasa.vn/wp-content/uploads/2022/07/lich-su-lop-12-bai-15-hinh-5.jpg?quality=100&h=120']
     },
     {
       id: 9,
-      title: "Văn hóa là mục tiêu và động lực",
-      content: "Hồ Chí Minh có chủ trương văn hóa là mục tiêu, động lực của cách mạng; cần giữ gìn cốt cách văn hóa dân tộc đồng thời tiếp thu tinh hoa văn hóa nhân loại, xây dựng nền văn hoá mới của Việt Nam. Chính Hồ Chí Minh là một biểu tượng cao đẹp của sự tích hợp tinh hoa văn hóa phương Đông và phương Tây.",
-      images: ["/context/images/van-hoa-muc-tieu.jpg", "/context/images/van-hoa-dong-tay.jpg"]
+      title: 'Mặt trận Dân chủ Đông Dương – Hình thức đấu tranh',
+      content:
+        'Thành lập Mặt trận Dân chủ Đông Dương. Phương pháp: công khai, nửa công khai; hợp pháp, nửa hợp pháp — mở rộng mặt trận quần chúng, rèn luyện lực lượng chính trị.(ảnh Phong trào vận động dân chủ 1936 – 1939 tại Huế)',
+      images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Phan_%C4%90%C4%83ng_L%C6%B0u_during_the_democratic_movement_of_1936-1939_in_Hue.jpg/500px-Phan_%C4%90%C4%83ng_L%C6%B0u_during_the_democratic_movement_of_1936-1939_in_Hue.jpg?quality=100&w=1420&h=1080' ]
     },
     {
       id: 10,
-      title: "Kết luận",
-      content: "Giá trị truyền thống tốt đẹp của dân tộc Việt Nam đã tạo nên nền tảng vững chắc cho sự hình thành tư tưởng Hồ Chí Minh. Việc kế thừa và phát triển sáng tạo những giá trị này đã giúp Người xây dựng được một hệ thống tư tưởng toàn diện, phù hợp với điều kiện cụ thể của Việt Nam và xu thế phát triển của thời đại.",
-      images: ["/context/images/ket-luan-gia-tri.jpg"]
-    }
+      title: 'Ý nghĩa: Chuẩn bị cho Cách mạng Tháng Tám',
+      content:
+        'Phong trào dân chủ tạo ra “đội quân chính trị” gồm hàng triệu quần chúng được giác ngộ, tổ chức, rèn luyện — tiền đề quyết định dẫn tới thắng lợi 1945.',
+      images: ['https://edumedia.dalat.vn//Images/LDG/khoa.sgd/TUYENTRUYENPHOBIENGDPHAPLUAT/1_638263080831680930.png?quality=100&w=1420&h=1080']
+    },
   ];
 
   const totalSlides = slidesData.length;

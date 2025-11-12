@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cơ sở hình thành tư tưởng Hồ Chí Minh",
+  title: "Đảng Cộng sản Việt Nam ra đời và Cương lĩnh chính trị đầu tiên của Đảng",
   description: "Website tìm hiểu về cơ sở hình thành tư tưởng Hồ Chí Minh",
 };
 

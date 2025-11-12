@@ -11,69 +11,87 @@ export default function CoSoThucTien() {
   const slidesData = [
     {
       id: 1,
-      title: "Cơ sở thực tiễn hình thành tư tưởng Hồ Chí Minh",
-      content: "Tư tưởng Hồ Chí Minh được hình thành từ hai cơ sở chính: cơ sở thực tiễn và cơ sở lý luận. Cơ sở thực tiễn bao gồm thực tiễn Việt Nam và thực tiễn thế giới cuối thế kỷ XIX, đầu thế kỷ XX - thời kỳ quan trọng trong quá trình hình thành nhân cách và tư tưởng của Người.",
-      images: ["/context/images/ho-chi-minh-1.jpg"]
+      title: 'Bối cảnh ra đời — Quốc tế',
+      content:
+        'Chủ nghĩa tư bản chuyển sang giai đoạn đế quốc, đẩy mạnh xâm chiếm thuộc địa.\n' +
+        'Cách mạng Tháng Mười Nga (1917) thắng lợi mở ra thời đại giải phóng dân tộc.\n' +
+        'Quốc tế Cộng sản (1919) do V.I.Lênin lãnh đạo định hướng đấu tranh cách mạng.',
+      images: ['https://cand.com.vn/Files/Image/honghai/2019/11/05/338e1e7a-975c-4af8-a7d4-8c114f1cec7d.jpg']
     },
     {
       id: 2,
-      title: "Thực tiễn Việt Nam cuối thế kỷ XIX",
-      content: "Từ năm 1858, đế quốc Pháp bắt đầu tiến hành xâm lược Việt Nam. Triều đình nhà Nguyễn lần lượt ký kết các hiệp ước đầu hàng, từng bước trở thành tay sai của thực dân Pháp. Điều này đã tạo ra bối cảnh lịch sử quan trọng cho việc hình thành tư tưởng giải phóng dân tộc.",
-      images: ["/context/images/vietnam-1858.jpg", "/context/images/french-invasion.jpg"]
+      title: 'Bối cảnh ra đời — Việt Nam',
+      content:
+        'Việt Nam dưới ách thực dân Pháp; mâu thuẫn cơ bản: toàn thể dân tộc VS thực dân Pháp và phong kiến tay sai.\n' +
+        'Các phong trào yêu nước theo ngọn cờ phong kiến, dân chủ tư sản đều thất bại do thiếu đường lối đúng và tổ chức vững mạnh.',
+      images: ['https://images.hcmcpv.org.vn/res/news/2021/08/31-08-2021-hai-cuoc-khang-phap-cua-dan-toc-viet-nam-E727E55B.jpg']
     },
     {
       id: 3,
-      title: "Các phong trào kháng chiến yêu nước",
-      content: "Từ năm 1858 đến cuối thế kỷ XIX, các phong trào đấu tranh yêu nước chống Pháp xâm lược liên tục nổ ra. Ở miền Nam có Trương Định, Nguyễn Trung Trực. Ở miền Trung có Trần Tấn, Đặng Như Mai, Phan Đình Phùng. Ở miền Bắc có Nguyễn Thiện Thuật, Hoàng Hoa Thám và nhiều anh hùng khác.",
-      images: ["/context/images/phan-dinh-phung.jpg", "/context/images/hoang-hoa-tham.jpg", "/context/images/can-vuong.png"]
+      title: 'Nguyễn Ái Quốc — Hành trình 1911–1920',
+      content:
+        '1911: Nguyễn Tất Thành ra đi tìm đường cứu nước.\n' +
+        'Tiếp xúc nhiều dòng tư tưởng, khảo nghiệm các con đường cứu nước ở phương Tây.',
+      images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3fgwNjpCKPTDxdT9xqMhyT9qigTy7H9S-Gw&s']
     },
     {
       id: 4,
-      title: "Thất bại của giai cấp phong kiến",
-      content: "Các cuộc khởi nghĩa, trong đó có những cuộc dưới ngọn cờ 'Cần Vương', tuy đều rất anh dũng nhưng cuối cùng đều thất bại. Điều đó chứng tỏ nhân dân ta rất yêu nước, song giai cấp phong kiến và hệ tư tưởng của nó đã suy tàn, bất lực trước nhiệm vụ bảo vệ độc lập dân tộc.",
-      images: ["/context/images/feudal-failure.jpg"]
+      title: 'Nguyễn Ái Quốc — Lựa chọn con đường',
+      content:
+        '12–1920: Bỏ phiếu tán thành Quốc tế Cộng sản tại Đại hội Tua; trở thành người cộng sản Việt Nam đầu tiên.\n' +
+        'Khẳng định: con đường cứu nước là cách mạng vô sản; “Đảng muốn vững phải có chủ nghĩa làm cốt”.',
+      images: ['https://mediafile.qdnd.vn//images/2022/6/4/khoi-1.jpg']
     },
     {
       id: 5,
-      title: "Thay đổi cơ cấu xã hội",
-      content: "Thực dân Pháp biến nước ta từ một nước phong kiến thành nước thuộc địa và phong kiến, dẫn tới sự biến đổi về cơ cấu giai cấp. Thực dân Pháp vẫn duy trì nền kinh tế nông nghiệp lạc hậu với khoảng 95% dân số là nông dân, đồng thời tăng cường giai cấp địa chủ.",
-      images: ["/context/images/colonial-society.jpg", "/context/images/peasants.jpg"]
+      title: 'Chuẩn bị — Tư tưởng, tổ chức',
+      content:
+        '1925: Thành lập Hội Việt Nam Cách mạng Thanh niên ở Quảng Châu; mở lớp huấn luyện, gửi cán bộ về nước.\n' +
+        '1927: Xuất bản “Đường Cách mệnh” — hệ thống hoá quan điểm cách mạng vô sản cho Việt Nam.',
+      images: ['https://files-vnportal.camau.dcs.vn/tinhuy/2681/Banner/vanban/Hinhanh/images-qc.jpg', 'https://www.thuviendongnai.gov.vn/_layouts/LacVietBIO/fckUpload/2022-8/DKM2082022_13034.jpg']
     },
     {
       id: 6,
-      title: "Sự xuất hiện của các giai cấp mới",
-      content: "Trong xã hội Việt Nam xuất hiện những giai tầng mới: giai cấp công nhân, giai cấp tư sản và tầng lớp tiểu tư sản ở thành thị. Từ đó xuất hiện các mâu thuẫn mới: giữa công nhân với tư sản, và giữa toàn thể nhân dân Việt Nam với chủ nghĩa đế quốc Pháp.",
-      images: ["/context/images/working-class.jpg", "/context/images/new-classes.jpg"]
+      title: 'Tiền đề tổ chức — Năm 1929',
+      content:
+        'Sự phát triển của phong trào công nhân và yêu nước dẫn tới sự ra đời: Đông Dương Cộng sản Đảng, An Nam Cộng sản Đảng, Đông Dương Cộng sản Liên đoàn.\n' +
+        'Tuy nhiên gây phân tán lực lượng, đòi hỏi hợp nhất.\n' +
+        '(ảnh Đông Dương Cộng sản Liên đoàn)',
+      images: ['http://dinhnghia.com.vn/wp-content/uploads/2022/08/dong-duong-cong-san-lien-doan-hoan-canh-ra-doi-va-muc-tieu-hoat-dong-1.jpg']
     },
     {
       id: 7,
-      title: "Các phong trào dân chủ tư sản",
-      content: "Đầu thế kỷ XX, xuất hiện các phong trào yêu nước theo khuynh hướng dân chủ tư sản: Phong trào Đông Du do Phan Bội Châu khởi xướng (1905-1909), Phong trào Duy Tân do Phan Châu Trinh phát động (1906-1908), Phong trào Đông Kinh Nghĩa Thục (1907).",
-      images: ["/context/images/phan-boi-chau.jpg", "/context/images/phan-chau-trinh.jpg", "/context/images/dong-kinh-nghia-thuc.jpg"]
+      title: 'Thành lập ĐCSVN — Hội nghị hợp nhất (2–1930)',
+      content:
+        'Nguyễn Ái Quốc, với tư cách phái viên Quốc tế Cộng sản, triệu tập Hội nghị tại Hương Cảng (TQ) để hợp nhất các tổ chức cộng sản.\n' +
+        'Thống nhất thành ĐẢNG CỘNG SẢN VIỆT NAM.',
+      images: ['https://cdn.baolaocai.vn/images/463974ce6d97d8cb8df387bbe715721ba55fab73fc22a03d0e5e6d06fcff08fdad548e768d09685db79e7f753f2e86761c9ac0d5b2e753947523111f2536b68953f6e28aecc261efb261caf1f0e1c402/bh9.jpg.webp']
     },
     {
       id: 8,
-      title: "Khủng hoảng về đường lối cứu nước",
-      content: "Các phong trào yêu nước theo khuynh hướng dân chủ tư sản đều thất bại do giai cấp tư sản Việt Nam còn non yếu và chưa có đường lối, phương pháp cách mạng đúng đắn. Xuất hiện câu hỏi: Cứu nước bằng con đường nào để có thể đi đến thắng lợi?",
-      images: ["/context/images/crisis.png"]
+      title: 'Cương lĩnh chính trị đầu tiên — Mục tiêu',
+      content:
+        'Thông qua “Chánh cương vắn tắt”, “Sách lược vắn tắt”.\n' +
+        'Mục tiêu chiến lược: làm “tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản”.',
+      images: ['https://images.hcmcpv.org.vn//Uploads/Image/02022022AC1CA2D/02-02-2022Chanhcuong.jpg']
     },
     {
       id: 9,
-      title: "Sự ra đời giai cấp công nhân",
-      content: "Cuối thế kỷ XIX, ở Việt Nam đã có công nhân. Đầu thế kỷ XX, công nhân phát triển hơn và trở thành một giai cấp. Công nhân Việt Nam chịu ba tầng áp bức: thực dân, tư bản, phong kiến. Họ sớm vùng dậy đấu tranh từ hình thức thô sơ đến đình công, bãi công.",
-      images: ["/context/images/workers-movement.jpg", "/context/images/strikes.jpg"]
+      title: 'Cương lĩnh chính trị đầu tiên — Nhiệm vụ & lực lượng',
+      content:
+        'Nhiệm vụ trước mắt: đánh đổ đế quốc Pháp và phong kiến; làm cho nước Nam hoàn toàn độc lập (đặt giải phóng dân tộc lên hàng đầu).\n' +
+        'Lực lượng: giai cấp công nhân lãnh đạo; liên minh công–nông là nền tảng; đoàn kết với tiểu tư sản, trí thức, trung nông…\n' +
+        'Đảng: “đội tiên phong của giai cấp vô sản”, phải lãnh đạo được quần chúng.',
+      images: ['https://images.hcmcpv.org.vn//Uploads/Image/02022022AC1CA2D/02-02-2022Chanhcuong.jpg']
     },
     {
       id: 10,
-      title: "Thực tiễn thế giới và Cách mạng Tháng Mười",
-      content: "Cách mạng Tháng Mười Nga thành công đã mở ra thời đại mới, mở ra con đường giải phóng cho các dân tộc bị áp bức. Quốc tế Cộng sản ra đời (1919) trở thành lãnh đạo phong trào cách mạng thế giới, ảnh hưởng sâu sắc tới Hồ Chí Minh trên hành trình tìm con đường cứu nước.",
-      images: ["/context/images/october-revolution.jpg", "/context/images/communist-international.jpg"]
-    },
-    {
-      id: 11,
-      title: "Kết luận",
-      content: "Cơ sở thực tiễn đã tạo ra những điều kiện khách quan quan trọng cho việc hình thành tư tưởng Hồ Chí Minh. Thực tiễn Việt Nam với những thử thách và khủng hoảng, cùng với thực tiễn thế giới với những biến đổi lớn, đã cung cấp nền tảng vững chắc cho sự ra đời một tư tưởng cách mạng mới - tư tưởng Hồ Chí Minh.",
-      images: ["/context/images/conclusion.jpg"]
+      title: 'Ý nghĩa lịch sử',
+      content:
+        'Chấm dứt khủng hoảng đường lối cứu nước; khẳng định giai cấp vô sản VN đủ sức lãnh đạo.\n' +
+        'Đảng ra đời là sản phẩm kết hợp chủ nghĩa Mác–Lênin, tư tưởng Hồ Chí Minh với phong trào công nhân và yêu nước.\n' +
+        'Xác lập con đường cách mạng vô sản đúng đắn cho dân tộc Việt Nam.',
+      images: ['https://file.qdnd.vn/data/images/0/2020/01/11/tuanson/1%208.jpg?dpi=150&quality=100&w=700&h=380']
     }
   ];
 

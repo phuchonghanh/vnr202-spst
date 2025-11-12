@@ -56,9 +56,9 @@ export default function Home() {
       default:
         return (
           <>
-            <span className="text-red-600">Cơ sở hình thành</span>
+            <span className="text-red-600">Đảng Cộng sản Việt Nam ra đời</span>
             <br />
-            <span className="text-yellow-400">tư tưởng Hồ Chí Minh</span>
+            <span className="text-yellow-400">và Cương lĩnh chính trị đầu tiên của Đảng</span>
           </>
         );
     }
@@ -70,22 +70,22 @@ export default function Home() {
         return [
           {
             href: '/journey/co-so-thuc-tien',
-            text: 'Cơ sở thực tiễn',
+            text: 'Đảng Cộng sản Việt Nam ra đời',
             color: 'bg-red-600 hover:bg-red-700',
             borderColor: 'border-yellow-400'
           },
           {
-            onClick: () => handleMenuChange('co-so-ly-luan'),
-            text: 'Cơ sở lý luận',
+            href: '/journey/gia-tri-truyen-thong',
+            text: ' Đảng lãnh đạo đấu tranh giành chính quyền',
             color: 'bg-yellow-500 hover:bg-yellow-600 text-red-800',
             borderColor: 'border-red-600'
           },
-          {
-            href: '/journey/nhan-to-chu-quan',
-            text: 'Nhân tố chủ quan HCM',
-            color: 'bg-red-600 hover:bg-red-700',
-            borderColor: 'border-yellow-400'
-          }
+          // {
+          //   href: '/journey/nhan-to-chu-quan',
+          //   text: 'Nhân tố chủ quan HCM',
+          //   color: 'bg-red-600 hover:bg-red-700',
+          //   borderColor: 'border-yellow-400'
+          // }
         ];
       
       case 'co-so-ly-luan':

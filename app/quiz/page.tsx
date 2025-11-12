@@ -23,7 +23,7 @@ export default function Quiz() {
 
   const loadQuestions = async () => {
     try {
-      const response = await fetch('/api/quiz?count=10');
+      const response = await fetch('/api/quiz');
       const result = await response.json();
       
       if (result.success) {
