@@ -103,8 +103,8 @@ export default function Quiz() {
 
   const getScoreColor = (percentage: number) => {
     if (percentage >= 80) return 'text-green-600';
-    if (percentage >= 60) return 'text-yellow-600';
-    return 'text-red-600';
+    if (percentage >= 60) return 'text-green-600';
+    return 'text-gray-600';
   };
 
   if (isLoading) {
@@ -115,9 +115,9 @@ export default function Quiz() {
           <h2 className="text-2xl font-bold mb-4">Đang tải câu hỏi...</h2>
           <button
             onClick={() => router.push('/')}
-            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 shadow-lg"
+            className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 shadow-lg"
           >
-            ← Trở về trang chủ
+            Về trang chủ
           </button>
         </div>
       </div>
@@ -153,12 +153,12 @@ export default function Quiz() {
                 </div>
               )}
               {quizResult.percentage >= 60 && quizResult.percentage < 80 && (
-                <div className="text-2xl text-yellow-600 font-bold">
+                <div className="text-2xl text-green-600 font-bold">
                   👍 Khá tốt! Bạn cần ôn luyện thêm một chút.
                 </div>
               )}
               {quizResult.percentage < 60 && (
-                <div className="text-2xl text-red-600 font-bold">
+                <div className="text-2xl text-gray-600 font-bold">
                   📚 Hãy học thêm về tư tưởng Hồ Chí Minh nhé!
                 </div>
               )}

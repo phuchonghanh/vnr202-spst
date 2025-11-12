@@ -47,21 +47,21 @@ export default function ChatbotPage() {
 
   return (
     <div className="h-screen overflow-hidden relative">
-      {/* Vietnam Flag Background */}
+      {/* Background */}
       <div 
         className="absolute inset-0 z-0"
         style={{
           background: `
             linear-gradient(to bottom, 
-              #DA020E 0%, 
-              #DA020E 100%
+              #374151 0%, 
+              #1f2937 100%
             )
           `,
         }}
       >
         {/* Star */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="text-yellow-400 text-8xl opacity-20">
+          <div className="text-white text-8xl opacity-20">
             ⭐
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function ChatbotPage() {
         <div className="w-80 bg-black bg-opacity-20 backdrop-blur-sm border-r border-white border-opacity-20 p-4 overflow-y-auto">
           <div className="mb-4">
             <Link href="/">
-              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button className="w-full bg-white hover:bg-gray-100 text-black font-semibold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
                 ← Về trang chủ
               </button>
             </Link>
@@ -106,7 +106,7 @@ export default function ChatbotPage() {
                 disabled={isLoading}
               >
                 <div className="flex items-start space-x-2">
-                  <span className="text-red-600 mt-1">📝</span>
+                  <span className="text-gray-800 mt-1">📝</span>
                   <span className="leading-relaxed font-medium">{question}</span>
                 </div>
               </button>
@@ -121,8 +121,8 @@ export default function ChatbotPage() {
             <h1 className="text-2xl font-bold text-center">
               🌟 Chatbot Tư tưởng Hồ Chí Minh 🌟
             </h1>
-            <p className="text-yellow-200 text-center mt-1">
-              Hỏi đáp về cơ sở hình thành tư tưởng Hồ Chí Minh
+            <p className="text-gray-300 text-center mt-1">
+              Hỏi đáp về Đảng Cộng sản Việt Nam ra đời và Cương lĩnh chính trị đầu tiên của Đảng
             </p>
           </div>
 
@@ -133,8 +133,8 @@ export default function ChatbotPage() {
                 <div className="text-center text-white bg-black bg-opacity-20 backdrop-blur-sm p-8 rounded-xl border border-white border-opacity-20">
                   <div className="text-6xl mb-4">🤖</div>
                   <p className="text-xl mb-2">Xin chào!</p>
-                  <p className="text-yellow-200">Tôi là chatbot hỗ trợ tìm hiểu về tư tưởng Hồ Chí Minh.</p>
-                  <p className="text-yellow-200">Hãy chọn câu hỏi bên trái hoặc nhập câu hỏi của bạn!</p>
+                  <p className="text-gray-300">Tôi là chatbot hỗ trợ tìm hiểu về khoảng thời gian Đảng ra đời và thời kì trước Cách Mạng Tháng 8.</p>
+                  <p className="text-gray-300">Hãy chọn câu hỏi bên trái hoặc nhập câu hỏi của bạn!</p>
                 </div>
               </div>
             ) : (
@@ -213,10 +213,10 @@ export default function ChatbotPage() {
                   disabled={isLoading}
                 />
               </div>
-              <button
+                <button
                 onClick={() => handleSendMessage()}
                 disabled={isLoading || !inputMessage.trim()}
-                className="bg-yellow-500 hover:bg-yellow-600 disabled:bg-gray-400 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg"
+                className="bg-white hover:bg-gray-100 disabled:bg-gray-400 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg"
               >
                 {isLoading ? 'Đang gửi...' : '📤 Gửi'}
               </button>

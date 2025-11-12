@@ -56,9 +56,9 @@ export default function Home() {
       default:
         return (
           <>
-            <span className="text-red-600">Đảng Cộng sản Việt Nam ra đời</span>
+            <span className="text-white">NẮM BẮT THỜI CƠ</span>
             <br />
-            <span className="text-yellow-400">và Cương lĩnh chính trị đầu tiên của Đảng</span>
+            <span className="text-gray-300">LINH HOẠT TRONG PHƯƠNG PHÁP CÁCH MẠNG</span>
           </>
         );
     }
@@ -69,16 +69,16 @@ export default function Home() {
       case 'tim-hieu':
         return [
           {
-            href: '/journey/co-so-thuc-tien',
+            href: '/journey/1',
             text: 'Đảng Cộng sản Việt Nam ra đời',
-            color: 'bg-red-600 hover:bg-red-700',
-            borderColor: 'border-yellow-400'
+            color: 'bg-gray-800 hover:bg-gray-900',
+            borderColor: 'border-white'
           },
           {
-            href: '/journey/gia-tri-truyen-thong',
+            href: '/journey/2',
             text: ' Đảng lãnh đạo đấu tranh giành chính quyền',
-            color: 'bg-yellow-500 hover:bg-yellow-600 text-red-800',
-            borderColor: 'border-red-600'
+            color: 'bg-black hover:bg-gray-100 text-black',
+            borderColor: 'border-gray-800'
           },
           // {
           //   href: '/journey/nhan-to-chu-quan',
@@ -91,22 +91,22 @@ export default function Home() {
       case 'co-so-ly-luan':
         return [
           {
-            href: '/journey/gia-tri-truyen-thong',
+            href: '/journey/3',
             text: 'Giá trị truyền thống',
-            color: 'bg-red-600 hover:bg-red-700',
-            borderColor: 'border-yellow-400'
+            color: 'bg-gray-800 hover:bg-gray-900',
+            borderColor: 'border-white'
           },
           {
-            href: '/journey/tinh-hoa-van-hoa-nhan-loai',
+            href: '/journey/4',
             text: 'Tinh hoa văn hóa nhân loại',
-            color: 'bg-yellow-500 hover:bg-yellow-600 text-red-800',
-            borderColor: 'border-red-600'
+            color: 'bg-white hover:bg-gray-100 text-black',
+            borderColor: 'border-gray-800'
           },
           {
             href: '/journey/chu-nghia-mac-lenin',
             text: 'Chủ nghĩa Mác-Lênin',
-            color: 'bg-red-600 hover:bg-red-700',
-            borderColor: 'border-yellow-400'
+            color: 'bg-gray-800 hover:bg-gray-900',
+            borderColor: 'border-white'
           }
         ];
       
@@ -115,20 +115,26 @@ export default function Home() {
           {
             onClick: () => handleMenuChange('tim-hieu'),
             text: 'Tìm hiểu',
-            color: 'bg-red-600 hover:bg-red-700',
-            borderColor: 'border-yellow-400'
+            color: 'bg-gray-800 hover:bg-gray-900',
+            borderColor: 'border-white'
           },
           {
             href: '/chatbot',
             text: 'Chatbot',
-            color: 'bg-yellow-500 hover:bg-yellow-600 text-red-800',
-            borderColor: 'border-red-600'
+            color: 'bg-black hover:bg-gray-100 text-black',
+            borderColor: 'border-gray-800'
           },
           {
             href: '/quiz',
             text: 'Quiz',
-            color: 'bg-red-600 hover:bg-red-700',
-            borderColor: 'border-yellow-400'
+            color: 'bg-gray-800 hover:bg-gray-900',
+            borderColor: 'border-white'
+          },
+          {
+            href: '/video',
+            text: 'Show Video',
+            color: 'bg-black hover:bg-gray-100 text-black',
+            borderColor: 'border-gray-800'
           }
         ];
     }

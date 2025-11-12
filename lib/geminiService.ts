@@ -19,7 +19,14 @@ export class GeminiChatService {
     }
     
     this.genAI = new GoogleGenerativeAI(apiKey);
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    
+    // Thử các model theo thứ tự ưu tiên
+    const modelOptions = [
+      'gemini-2.5-flash'
+    ];
+    
+    // Sử dụng model đầu tiên (có thể thay đổi nếu cần)
+    this.model = this.genAI.getGenerativeModel({ model: modelOptions[0] });
     this.initializeContext();
   }
 
@@ -28,7 +35,7 @@ export class GeminiChatService {
       this.systemContext = await ContextService.getContextAsString();
     } catch (error) {
       console.error('Lỗi khi khởi tạo context:', error);
-      this.systemContext = 'Tôi là chatbot hỗ trợ tìm hiểu về tư tưởng Hồ Chí Minh.';
+      this.systemContext = 'Tôi là chatbot hỗ trợ tìm hiểu về Đảng Cộng sản Việt Nam ra đời và Cương lĩnh chính trị đầu tiên của Đảng.';
     }
   }
 
@@ -62,8 +69,16 @@ export class GeminiChatService {
       const text = response.text();
 
       return text || 'Xin lỗi, tôi không thể tạo phản hồi lúc này.';
-    } catch (error) {
+    } catch (error: any) {
       console.error('Lỗi khi gọi Gemini API:', error);
+      
+      // Thông báo lỗi chi tiết hơn cho việc debug
+      if (error?.message?.includes('404') || error?.message?.includes('not found')) {
+        return 'Lỗi: Model Gemini không khả dụng. Vui lòng kiểm tra cấu hình API hoặc thử lại sau.';
+      } else if (error?.message?.includes('API key')) {
+        return 'Lỗi: API key không hợp lệ. Vui lòng kiểm tra cấu hình.';
+      }
+      
       return 'Xin lỗi, đã có lỗi xảy ra khi xử lý câu hỏi của bạn. Vui lòng thử lại sau.';
     }
   }
@@ -71,7 +86,7 @@ export class GeminiChatService {
   async generateSuggestedQuestions(): Promise<string[]> {
     try {
       const prompt = `${this.systemContext}\n\n
-      Dựa trên tài liệu trên, hãy tạo 5 câu hỏi gợi ý thú vị mà người dùng có thể hỏi về tư tưởng Hồ Chí Minh. 
+      Dựa trên tài liệu trên, hãy tạo 5 câu hỏi gợi ý thú vị mà người dùng có thể hỏi về Đảng Cộng sản Việt Nam ra đời và Cương lĩnh chính trị đầu tiên của Đảng. 
       Mỗi câu hỏi trên một dòng, không đánh số, ngắn gọn và dễ hiểu.`;
 
       const result = await this.model.generateContent(prompt);
@@ -85,19 +100,19 @@ export class GeminiChatService {
         .slice(0, 5);
 
       return questions.length > 0 ? questions : [
-        'Cơ sở thực tiễn hình thành tư tưởng Hồ Chí Minh là gì?',
-        'Hồ Chí Minh đã kế thừa những giá trị truyền thống nào của dân tộc?',
-        'Chủ nghĩa Mác-Lênin ảnh hưởng như thế nào đến tư tưởng Hồ Chí Minh?',
-        'Nhân tố chủ quan nào đã hình thành nên Hồ Chí Minh?',
-        'Tư tưởng Hồ Chí Minh có đóng góp gì cho cách mạng Việt Nam?'
+        'Đảng Cộng sản Việt Nam ra đời trong bối cảnh nào?',
+        'Nguyễn Ái Quốc đã thành lập Đảng như thế nào?',
+        'Cương lĩnh chính trị đầu tiên của Đảng có ý nghĩa gì?',
+        'Hội nghị hợp nhất tại Hương Cảng diễn ra như thế nào?',
+        'Vai trò của Hồ Chí Minh trong việc thành lập Đảng?'
       ];
     } catch (error) {
       console.error('Lỗi khi tạo câu hỏi gợi ý:', error);
       return [
-        'Cơ sở thực tiễn hình thành tư tưởng Hồ Chí Minh là gì?',
-        'Hồ Chí Minh đã kế thừa những giá trị truyền thống nào của dân tộc?',
-        'Chủ nghĩa Mác-Lênin ảnh hưởng như thế nào đến tư tưởng Hồ Chí Minh?',
-        'Nhân tố chủ quan nào đã hình thành nên Hồ Chí Minh?',
+        'Đảng Cộng sản Việt Nam ra đời trong bối cảnh nào?',
+        'Nguyễn Ái Quốc đã thành lập Đảng như thế nào?',
+        'Cương lĩnh chính trị đầu tiên của Đảng có ý nghĩa gì?',
+        'Hội nghị hợp nhất tại Hương Cảng diễn ra như thế nào?',
         'Tư tưởng Hồ Chí Minh có đóng góp gì cho cách mạng Việt Nam?'
       ];
     }

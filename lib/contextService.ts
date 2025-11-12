@@ -4,7 +4,7 @@ import path from 'path';
 export interface ContextData {
   fileName: string;
   content: string;
-  category: 'thực tiễn' | 'lý luận' | 'nhân tố chủ quan';
+  category: 'đảng cộng sản';
 }
 
 export class ContextService {
@@ -19,44 +19,15 @@ export class ContextService {
     const contextData: ContextData[] = [];
 
     try {
-      // Đọc file cơ sở thực tiễn
-      const thucTienPath = path.join(contextPath, 'cơ sở thực tiễn.txt');
-      if (fs.existsSync(thucTienPath)) {
-        const content = fs.readFileSync(thucTienPath, 'utf-8');
+      // Đọc file giáo trình chính
+      const giaoTrinhPath = path.join(contextPath, 'giao-trinh.txt');
+      if (fs.existsSync(giaoTrinhPath)) {
+        const content = fs.readFileSync(giaoTrinhPath, 'utf-8');
         contextData.push({
-          fileName: 'cơ sở thực tiễn.txt',
+          fileName: 'giao-trinh.txt',
           content: content,
-          category: 'thực tiễn'
+          category: 'đảng cộng sản'
         });
-      }
-
-      // Đọc file nhân tố chủ quan
-      const nhanToPath = path.join(contextPath, 'nhân tố chủ quan Hồ Chí Minh.txt');
-      if (fs.existsSync(nhanToPath)) {
-        const content = fs.readFileSync(nhanToPath, 'utf-8');
-        contextData.push({
-          fileName: 'nhân tố chủ quan Hồ Chí Minh.txt',
-          content: content,
-          category: 'nhân tố chủ quan'
-        });
-      }
-
-      // Đọc các file trong thư mục cơ sở lý luận
-      const lyLuanPath = path.join(contextPath, 'cơ sở lý luận');
-      if (fs.existsSync(lyLuanPath)) {
-        const lyLuanFiles = fs.readdirSync(lyLuanPath);
-        
-        for (const file of lyLuanFiles) {
-          if (file.endsWith('.txt')) {
-            const filePath = path.join(lyLuanPath, file);
-            const content = fs.readFileSync(filePath, 'utf-8');
-            contextData.push({
-              fileName: file,
-              content: content,
-              category: 'lý luận'
-            });
-          }
-        }
       }
 
       this.contextData = contextData;
@@ -70,7 +41,7 @@ export class ContextService {
   static async getContextAsString(): Promise<string> {
     const contextData = await this.loadAllContext();
     
-    let contextString = `Đây là tài liệu về "Cơ sở hình thành tư tưởng Hồ Chí Minh":\n\n`;
+    let contextString = `Đây là tài liệu về "Đảng Cộng sản Việt Nam ra đời và Cương lĩnh chính trị đầu tiên của Đảng":\n\n`;
     
     contextData.forEach((data, index) => {
       contextString += `=== ${data.fileName.replace('.txt', '').toUpperCase()} ===\n`;
@@ -79,8 +50,8 @@ export class ContextService {
 
     contextString += `\nHướng dẫn trả lời:
 - Ưu tiên sử dụng thông tin từ tài liệu trên để trả lời câu hỏi
-- Nếu câu hỏi không liên quan đến tài liệu, hãy nói rằng tài liệu không có, nhưng tôi vẫn sẽ research để trả lời
-- Luôn trả lời bằng tiếng Việt`;
+- Nếu câu hỏi không liên quan đến tài liệu, hãy nói rằng tài liệu không có thông tin này, nhưng tôi vẫn sẽ cố gắng trả lời dựa trên kiến thức chung
+- Luôn trả lời bằng tiếng Việt và tập trung vào chủ đề Đảng Cộng sản Việt Nam ra đời`;
 
     return contextString;
   }
