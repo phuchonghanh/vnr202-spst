@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function VideoPage() {
   // Thay YOUR_VIDEO_ID bằng ID video YouTube của bạn
   // Ví dụ: nếu URL là https://www.youtube.com/watch?v=dQw4w9WgXcQ thì videoId = "dQw4w9WgXcQ"
-  const videoId = "ymmSSBc2xMY"; // ← Thay bằng video ID của bạn
+  const videoId = "kH71S63OvJ0"; // ← Thay bằng video ID của bạn
  
   return (
     <div className="min-h-screen bg-black relative">
